@@ -1,0 +1,38 @@
+{
+  "name": "@hooks-plus/use-modal",
+  "version": "1.0.1",
+  "description": "antd useModal",
+  "license": "MIT",
+  "keywords": [
+    "antd",
+    "useModal",
+    "hooks"
+  ],
+  "scripts": {
+    "dev": "cd examples & ts-node run.ts",
+    "dev-vite": "cd examples & vite",
+    "compile": "es-pkg compile",
+    "unpkg": "es-pkg unpkg",
+    "doc": "es-pkg doc",
+    "publish": "es-pkg publish"
+  },
+  "dependencies": {
+    "antd": "**"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@types/react": "^18.0.14",
+    "@types/react-dom": "^18.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.30.4",
+    "@typescript-eslint/parser": "^5.30.4",
+    "@vitejs/plugin-react": "^1.3.2",
+    "es-pkg": "^1.0.10",
+    "eslint": "^8.19.0",
+    "eslint-plugin-react": "^7.30.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.53.0",
+    "typescript": "^4.7.4",
+    "vite": "^2.9.13"
+  }
+}
