@@ -17,7 +17,7 @@
     "publish": "es-pkg publish"
   },
   "dependencies": {
-    "antd": "**"
+    "antd": "latest"
   },
   "devDependencies": {
     "@types/node": "^18.0.0",

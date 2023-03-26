@@ -1,7 +1,7 @@
 import * as React from "react"
 import {useState, useCallback} from "react"
-import {Modal} from "antd"
-import type {ModalProps} from "antd"
+import Modal from "antd/es/modal"
+import type {ModalProps} from "antd/es/modal"
 
 const useModal: (jsx: React.ReactNode, defaultModalProps?: ModalProps) => [React.ReactElement, React.Dispatch<React.SetStateAction<ModalProps>>] = (jsx, defaultModalProps) => {
     const [props, setProps] = useState<ModalProps>({...defaultModalProps})
@@ -10,17 +10,17 @@ const useModal: (jsx: React.ReactNode, defaultModalProps?: ModalProps) => [React
         setProps((prev) => ({...prev, ...props}))
     }, [])
 
-    const handleProxyCancel = useCallback((e: React.MouseEvent<HTMLElement>) => {
+    const handleProxyCancel = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
         props.onCancel?.(e)
-        updateModalProps({visible: false});
+        updateModalProps({open: false});
     }, [props.onCancel])
 
-    const handleProxyOk = useCallback(async (e: React.MouseEvent<HTMLElement>) => {
+    const handleProxyOk = useCallback(async (e: React.MouseEvent<HTMLButtonElement>) => {
         updateModalProps({confirmLoading: true});
         let final;
         try {
             await props.onOk?.(e);
-            final = {visible: false, confirmLoading: false}
+            final = {open: false, confirmLoading: false}
         } catch (e) {
             final = {confirmLoading: false}
         }
