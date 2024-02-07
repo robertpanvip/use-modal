@@ -1,10 +1,15 @@
 
 📦 **Installation**
 ``` javascript
-npm install @hooks-plus/use-modal
+npm install use-modal
 ```
 🔨 **Usage**
 
 see demo
 
+**🔨 API**
+
+| name | type   | description | defaultValue | required |
+| :--- | ------ | ----------- | ------------ |----------|
+| a    | number |             |              | false    |
 
