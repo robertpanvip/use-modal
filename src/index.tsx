@@ -15,6 +15,15 @@ const useModal: (
 
   const updateModalProps = useCallback(
     (props: React.SetStateAction<ModalProps>) => {
+      setProps((prev) => {
+        let _props: ModalProps;
+        if (typeof props === "function") {
+          _props = props(prev);
+        } else {
+          _props = props;
+        }
+        return { ...prev, ..._props };
+      });
       setProps((prev) => ({ ...prev, ...props }));
     },
     []
