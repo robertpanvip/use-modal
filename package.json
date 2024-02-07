@@ -1,5 +1,5 @@
 {
-  "name": "use-modal",
+  "name": "@hooks-plus/use-modal",
   "description": "use-modal",
   "version": "0.0.1",
   "type": "module",
