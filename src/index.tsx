@@ -1,8 +1,7 @@
-import { useRequest } from "ahooks";
+import { useRequest,useLockFn } from "ahooks";
 import React, { useState, useCallback } from "react";
 import { Modal } from "antd";
 import type { ModalProps } from "antd";
-import { pxToRem } from "@/utils/rem";
 
 export type DefaultRender<E> =
   | React.ReactNode
@@ -32,9 +31,6 @@ function useModal<E>(
       await mergedProps.onOk?.(e);
     },
     {
-      throttleWait: 800,
-      throttleLeading: false,
-      throttleTrailing: true,
       manual: true,
     }
   );
@@ -44,12 +40,14 @@ function useModal<E>(
     await mergedProps.onCancel?.(e);
     setOpen(false);
   };
-  const onProxyOk = async (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+
+  const onProxyOk = useLockFn(async (
+      e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     await okService?.(e);
     setOpen(false);
-  };
+  });
+
   const { state, ...rest } = mergedProps;
 
   const context = (
@@ -59,7 +57,7 @@ function useModal<E>(
       {...rest}
       confirmLoading={loading || mergedProps.confirmLoading}
       open={open}
-      width={pxToRem(mergedProps.width || 520)}
+      width={mergedProps.width || 520}
       onCancel={onProxyCancel}
       onOk={onProxyOk}
     >
