@@ -1,4 +1,3 @@
 {
-  "entry": "./src/index.tsx",
-  "publishDir": "../use-modal-npm"
+  "entry": "./src/index.tsx"
 }
