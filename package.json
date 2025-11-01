@@ -1,15 +1,13 @@
 {
   "name": "@hooks-plus/use-modal",
-  "version": "1.0.1",
-  "description": "antd useModal",
-  "license": "MIT",
-  "keywords": [
-    "antd",
-    "useModal",
-    "hooks"
-  ],
+  "description": "use-modal",
+  "version": "0.0.1",
+  "type": "module",
   "scripts": {
-    "dev": "cd examples & vite",
+    "dev": "vite",
+    "build-site": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
     "compile": "es-pkg compile",
     "doc": "es-pkg doc",
     "publish": "es-pkg publish"
@@ -19,23 +17,34 @@
     "react": ">17.0.0"
   },
   "devDependencies": {
-    "@types/node": "^18.0.0",
-    "@types/react": "^18.0.14",
-    "@types/react-dom": "^18.0.5",
-    "@typescript-eslint/eslint-plugin": "^5.30.4",
-    "@typescript-eslint/parser": "^5.30.4",
-    "@vitejs/plugin-react": "^1.3.2",
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "@vitejs/plugin-react": "^4.2.1",
     "es-pkg": "latest",
-    "eslint": "^8.19.0",
-    "eslint-plugin-react": "^7.30.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "sass": "^1.53.0",
-    "typescript": "^4.7.4",
-    "vite": "^2.9.13"
+    "eslint": "^8.55.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8",
+    "vite-plugin-checker": "^0.6.4"
   },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
-  }
+  },
+  "keywords": [
+    "use-modal"
+  ],
+  "homepage": "https://github.com/robertpanvip/use-modal.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robertpanvip/use-modal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/robertpanvip/use-modal/issues"
+  },
+  "author": "robertpanvip",
+  "license": "ISC"
 }
